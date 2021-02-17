@@ -18,7 +18,7 @@ namespace Shapes
         }
         public override Vector3 Center => new Vector3(position, 0);
         public override float Circumference => (radius + radius) * MathF.PI;
-        public override float Area => throw new NotImplementedException();
+        public override float Area => radius * radius * MathF.PI;
         public override string ToString()
         {
             return $"Circle @({position.X}, {position.Y}): r = {radius}";
