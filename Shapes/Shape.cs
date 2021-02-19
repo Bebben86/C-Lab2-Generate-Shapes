@@ -46,7 +46,7 @@ namespace Shapes
         {
             Vector2 p1 = new Vector2((float)rnd.NextDouble(), (float)rnd.NextDouble());
             Vector2 p2 = new Vector2((float)rnd.NextDouble(), (float)rnd.NextDouble());
-            Vector2 p3 = new Vector2();         // TODO: figure this out from the class
+            Vector2 p3 = new Vector2(3.0f * position.X - p1.X - p2.X, 3.0f * position.Y - p1.Y - p2.Y);
             return new Triangle(p1, p2, p3);
         }
     }

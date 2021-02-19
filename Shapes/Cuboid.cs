@@ -11,40 +11,56 @@ namespace Shapes
     {
         public Vector3 center;
         public Vector3 size;
-        private readonly Vector3 _p1;
-        private readonly Vector3 _p2;
-        private readonly Vector3 _p3;
+        public Vector3 p1;
+        public Vector3 p2;
+        public Vector3 p3;
 
         public Cuboid(Vector3 center, Vector3 size)
         {
-            this.center = center;
-            this.size = size;
-
+            size = size;
+            center = center;
+            
         }
 
         public Cuboid(Vector3 center, float width)
         {
-            throw new NotImplementedException();
+            center = center;
+            size = new Vector3(width, width, width);
+            
         }
-        public override float Volume => _p1 * _p2 * _p3;
+        public override float Volume 
+        {
+            get
+            {
+                return (size.X * size.Y * size.Z);
+            }
+        }
 
-        public override Vector3 Center => (Vector3 ) / 8;
+        public override Vector3 Center
+        { 
+        get
+            {
+                return center; 
+            }
+        }
 
-        public override float Area => throw new NotImplementedException();
+        public override float Area 
+        {
+            get
+            {
+                return (2 * p1.X * p1.Y) + (2 * p2.X * p2.Y) + (2 * p3.X * p3.Y);
+            }
+        }
 
         public bool IsCube()
         {
-            if(_p1 == _p2 == _p3)
-            {
-            return true;
-            }
-            else
-            {
-            return false;
-            }
+            return ; //x = z, z = y
         }
 
-        public override string ToString() => throw new NotImplementedException();
+        public override string ToString() 
+        {
+            return $"Cuboid @(): w = ";
+        }
 
     }
 }

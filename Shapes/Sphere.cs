@@ -5,19 +5,48 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
-
-public class Sphere : Shape3D
+namespace Shapes
 {
-    public Sphere(Vector3 center, float radius)
+    class Sphere : Shape3D
     {
-        public Vector3 center;
-        public float radius;
+        private Vector3 center;
+        private float radius;
 
-        _radius = radius;
-        Center = center;
-        Area = (float)(4 * Math.PI * Math.Pow(_radius, 2));
-        Volume = (float)(0.75D * Math.PI * Math.Pow(_radius, 3));
+        public Sphere(Vector3 center, float radius)
+        {
+            this.radius = radius;
+            this.center = center;
+                        
+        }
+
+        public override float Volume 
+        {
+            get
+            {
+                return (float)(0.75d * Math.PI * Math.Pow(radius, 3)); //Dubbelkolla
+            }
+        }
+
+        public override float Area
+        { 
+            get
+            {
+                return (float)(4 * Math.PI * Math.Pow(radius, 2)); //Dubbelkolla
+            }
+        }
+
+        public override Vector3 Center
+        { 
+            get
+            {
+                return center;
+            }
+        }
+
+        public override string ToString()
+        {
+            return $"Sphere @({Center.X}, {Center.Y}, {Center.Z}): r = {radius}";
+        }
+
     }
-
-
 }

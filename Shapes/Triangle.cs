@@ -21,8 +21,20 @@ namespace Shapes
         // Referens: http://www.math.chalmers.se/~hasse/LINALG.pdf, Exempel 2.4, sid 8-9
         // Referens2: http://www.rasmus.is/sv/t/G/Su58k03.htm
         public override Vector3 Center => new Vector3((p1.X + p2.X + p3.X) / 3.0f, (p1.Y + p2.Y + p3.Y) / 3.0f, 0);
-        public override float Circumference => (p1 - p2).Length() + (p2 - p3).Length() + (p3 - p1).Length();
-        public override float Area => MathF.Sqrt((p1 - p2).Length() + (p2 - p3).Length() + (p3 - p1).Length()); //Oklart om denna stämmer
+        public override float Circumference 
+        {
+            get
+            {
+                return (Vector2.Distance(p1, p2) + Vector2.Distance(p1, p3) + Vector2.Distance(p2, p3));
+            }
+        }
+        public override float Area 
+        {
+            get
+            {
+                return (p1.X * (p2.Y - p3.Y) + p2.X * (p3.Y - p1.Y) + p3.X * (p1.Y - p2.Y)) / 2f;
+            }
+        }
         public override string ToString()
         {
             return $"Triangle @({Center.X}, {Center.Y}): p1 = {p1}, p2 = {p2}, p3 = {p3}";
