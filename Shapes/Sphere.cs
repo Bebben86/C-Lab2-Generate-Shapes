@@ -19,33 +19,18 @@ namespace Shapes
                         
         }
 
-        public override float Volume 
-        {
-            get
-            {
-                return (float)(0.75d * Math.PI * Math.Pow(radius, 3)); //Dubbelkolla
-            }
-        }
+        public override float Volume => (float)(4.0/3 * Math.PI * Math.Pow(radius, 3));
+        
 
-        public override float Area
-        { 
-            get
-            {
-                return (float)(4 * Math.PI * Math.Pow(radius, 2)); //Dubbelkolla
-            }
-        }
+        public override float Area => (float)(4 * Math.PI * Math.Pow(radius, 2));
+        
 
-        public override Vector3 Center
-        { 
-            get
-            {
-                return center;
-            }
-        }
+        public override Vector3 Center => center;
+        
 
         public override string ToString()
         {
-            return $"Sphere @({Center.X}, {Center.Y}, {Center.Z}): r = {radius}";
+            return $"Sphere @({Center.X}, {Center.Y}, {Center.Z}) | r = {radius}";
         }
 
     }
