@@ -23,7 +23,7 @@ namespace Shapes
         
         public override string ToString()
         {
-            return $"Circle @({position.X}, {position.Y}) | r = {radius}"; //\n  Area= {Area}\n  Circ. = {Circumference}
+            return $"Circle @({position.X:0.0}, {position.Y:0.0}) | r = {radius:0.0}"; //\n  Area= {Area}\n  Circ. = {Circumference}
         }
 
     }

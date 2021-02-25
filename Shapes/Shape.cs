@@ -23,7 +23,7 @@ namespace Shapes
         public static Shape GenerateShape(Vector3 position)
         {
             int i = rnd.Next(7);
-            float scaleFactor = 5;      // Because rnd.NextDouble returns a number between 0.0f and 1.0f
+            float scaleFactor = 5;
             return i switch
             {
                 0 => new Circle(new Vector2(position.X, position.Y), (float)rnd.NextDouble() * scaleFactor),

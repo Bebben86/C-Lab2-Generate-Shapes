@@ -32,7 +32,7 @@ namespace Shapes
         public override Vector3 Center => Center;
         
 
-        public override float Area => (2 * size.X * size.Y) + (2 * size.X * size.Y) + (2 * size.X * size.Y);
+        public override float Area => (2 * size.X * size.Y) + (2 * size.X * size.Z) + (2 * size.Z * size.Y);
         
 
         public bool IsCube()
@@ -51,11 +51,11 @@ namespace Shapes
         {
             if (IsCube())
             {
-                return $"Cube @({position.X}, {position.Y}) | w, h, l = {size.X}";
+                return $"Cube @({position.X:0.0}, {position.Y:0.0}) | w, h, l = {size.X:0.0}";
             }
             else 
             {
-                return $"Cuboid @({position.X}, {position.Y}) | w = {size.X}, h = {size.Y}, l = {size.Z}";
+                return $"Cuboid @({position.X:0.0}, {position.Y:0.0}) | w = {size.X:0.0}, h = {size.Y:0.0}, l = {size.Z:0.0})";
             }
         }
 

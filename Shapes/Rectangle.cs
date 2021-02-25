@@ -53,11 +53,11 @@ namespace Shapes
         {
             if (IsSquare())
             {
-                return $"Square @({position.X}, {position.Y}) | w, h = {size.X}"; //\n  Area = {Area}\n  Circ. = {Circumference}
+                return $"Square @({position.X:0.0}, {position.Y:0.0}) | w, h = {size.X:0.0}"; //\n  Area = {Area}\n  Circ. = {Circumference}
             }
             else
             {
-                return $"Rectangle @({position.X}, {position.Y}) | w = {size.X}, h = {size.Y}"; //\n  Area = {Area}\n  Circ. = {Circumference}
+                return $"Rectangle @({position.X:0.0}, {position.Y:0.0}) | w = {size.X:0.0}, h = {size.Y:0.0}"; //\n  Area = {Area}\n  Circ. = {Circumference}
             }
         }
 

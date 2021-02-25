@@ -39,24 +39,19 @@ namespace LabShapes
             string largestShape = "";
             Shape3D shape3D;
 
-            int count = 1;
+            int lineCount = 1;
             foreach (var shape in ShapeList)
             {
                 if (shape is Triangle)
                 {
                     var triangle = shape as Triangle;
                     circTriangles += triangle.Circumference;
-                    Console.WriteLine($"#{count++}: {triangle}");
+                    Console.WriteLine($"#{lineCount++}: {triangle}");
                     
-                    //foreach (var triangleCorners in ShapeList)
-                    //{
-                    //    Console.WriteLine($"Triangelhörn {triangleCorners}");
-                        
-                    //}
                 }
                 else
                 {
-                    Console.WriteLine($"#{count++}: {shape}");
+                    Console.WriteLine($"#{lineCount++}: {shape}");
                     
                 }
 
@@ -68,7 +63,7 @@ namespace LabShapes
                     if (biggestVolume < shape3D.Volume)
                     {
                         biggestVolume = shape3D.Volume;
-                        largestShape = shape3D.ToString(); //TODO Göra if-satser, shape is Cuboid, Cube, Sphere
+                        largestShape = shape3D.ToString(); 
                     }
                 }
             }
@@ -76,9 +71,9 @@ namespace LabShapes
 
             
             Console.WriteLine("\n+---------------------------------+\n");
-            Console.WriteLine($"Total circ. for triangles is {circTriangles},");
+            Console.Write($"Total circ. for triangles is {circTriangles}, ");
             Console.WriteLine($"and the average area is {averageShapeArea / 20}.");
-            Console.WriteLine($"{largestShape} is the biggest with a volume of {biggestVolume}.");             //shape3D kan inte skriva ut vilkent typ av form
+            Console.WriteLine($"{largestShape} is the biggest with a volume of {biggestVolume}.");
         }
 
     }
