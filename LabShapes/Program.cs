@@ -26,7 +26,7 @@ namespace LabShapes
             
             Console.WriteLine("\n+---------------------------------+\n");
             Console.WriteLine("This was Lab2 by Andreas Nilsson.");
-            Console.Write("\nPlease press any key to exit.");
+            Console.Write("Please press any key to exit.");
             Console.ReadKey();
         }
 
@@ -72,8 +72,8 @@ namespace LabShapes
             
             Console.WriteLine("\n+---------------------------------+\n");
             Console.Write($"Total circ. for triangles is {circTriangles}, ");
-            Console.WriteLine($"and the average area is {averageShapeArea / 20}.");
-            Console.WriteLine($"{largestShape} is the biggest with a volume of {biggestVolume}.");
+            Console.WriteLine($"and the average area of all shapes is {averageShapeArea / 20}.");
+            Console.WriteLine($"{largestShape} is largest with a volume of {biggestVolume}.");
         }
 
     }
