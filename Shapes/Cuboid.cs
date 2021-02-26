@@ -51,11 +51,11 @@ namespace Shapes
         {
             if (IsCube())
             {
-                return $"Cube @({position.X:0.0}, {position.Y:0.0}) | w, h, l = {size.X:0.0}";
+                return $"Cube @({position.X:0.0}, {position.Y:0.0}, {position.Z:0.0}) | w, h, l = {size.X:0.0}";
             }
             else 
             {
-                return $"Cuboid @({position.X:0.0}, {position.Y:0.0}) | w = {size.X:0.0}, h = {size.Y:0.0}, l = {size.Z:0.0})";
+                return $"Cuboid @({position.X:0.0}, {position.Y:0.0}, {position.Z:0.0}) | w = {size.X:0.0}, h = {size.Y:0.0}, l = {size.Z:0.0})";
             }
         }
 

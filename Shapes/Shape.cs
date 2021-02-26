@@ -27,8 +27,9 @@ namespace Shapes
             return i switch
             {
                 0 => new Circle(new Vector2(position.X, position.Y), (float)rnd.NextDouble() * scaleFactor),
-                1 => new Rectangle(new Vector2(position.X, position.Y), (float)rnd.NextDouble() * scaleFactor),   
-                2 => new Rectangle(new Vector2(position.X, position.Y), (float)rnd.NextDouble() * scaleFactor),   
+                1 => new Rectangle(new Vector2(position.X, position.Y), new Vector2((float)rnd.NextDouble() * scaleFactor, (float)rnd.NextDouble() * scaleFactor)),   
+                2 => new Rectangle(new Vector2(position.X, position.Y), new Vector2((float)rnd.NextDouble() * scaleFactor, (float)rnd.NextDouble() * scaleFactor)),
+                //2 => new Rectangle(new Vector2(position.X, position.Y), (float)rnd.NextDouble() * scaleFactor),
                 3 => GenerateTriangle(new Vector2(position.X, position.Y)),
                 4 => new Sphere(position, (float)rnd.NextDouble() * scaleFactor), 
                 5 => new Cuboid(position, Vector3.One * (float)rnd.NextDouble() * scaleFactor),

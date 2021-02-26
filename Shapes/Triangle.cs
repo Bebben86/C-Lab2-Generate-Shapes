@@ -26,7 +26,7 @@ namespace Shapes
         
         public override string ToString()
         {
-            return $"Triangle @({Center.X:0.0}, {Center.Y:0.0}) | p1 = {p1:0.0}, p2 = {p2:0.0}, p3 = {p3:0.0}"; //\n  Area = {Area}.\n  Circ. = {Circumference}
+            return $"Triangle @({Center.X:0.0}, {Center.Y:0.0}) | p1 = {p1:0.0}, p2 = {p2:0.0}, p3 = {p3:0.0}"; 
         }
     }
 }

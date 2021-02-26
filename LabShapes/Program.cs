@@ -1,6 +1,7 @@
 ﻿using Shapes;
 using System;
 using System.Collections.Generic;
+using System.Numerics;
 
 namespace LabShapes
 {
@@ -9,18 +10,49 @@ namespace LabShapes
         static void Main(string[] args)
         {
             var shapes = new List<Shape>();
-            for (int i = 0; i < 20; i++)
+            
+
+            Console.Write("Do you want to enter a center position? (Y/N)  ");
+            string answer = Console.ReadLine();
+            Console.WriteLine();
+
+            if (answer is "Y" || answer is "y")
             {
-                shapes.Add(Shape.GenerateShape());
+                Console.Write("Enter center position X:");
+                float userCenterX = float.Parse(Console.ReadLine());
+                Console.Write("Enter center position Y:");
+                float userCenterY = float.Parse(Console.ReadLine());
+                Console.Write("Enter center position Z:");
+                float userCenterZ = float.Parse(Console.ReadLine());
+                Console.WriteLine();
+
+                
+                for (int i = 0; i < 20; i++)
+                {
+                    shapes.Add(Shape.GenerateShape(new Vector3(userCenterX, userCenterY, userCenterZ)));
+                }
+                PrintValues(shapes);
+                
+
+            }
+            else if (answer is "N" || answer is "n")
+            {
+                
+                for (int i = 0; i < 20; i++)
+                {
+                    shapes.Add(Shape.GenerateShape());
+                }
+                PrintValues(shapes);
+                
+            }
+            else
+            {
+                Console.WriteLine("Invalid input. Program will exit."); 
             }
 
-            //foreach (Shape s in shapes)
-            //{
-            //    Console.WriteLine(s);
-            //    Console.WriteLine();
-            //}
-            PrintValues(shapes);
+            
 
+           
             Console.ForegroundColor = ConsoleColor.Yellow;
 
             
@@ -46,12 +78,12 @@ namespace LabShapes
                 {
                     var triangle = shape as Triangle;
                     circTriangles += triangle.Circumference;
-                    Console.WriteLine($"#{lineCount++}: {triangle}");
+                    Console.WriteLine($"#{lineCount++}:\t {triangle}");
                     
                 }
                 else
                 {
-                    Console.WriteLine($"#{lineCount++}: {shape}");
+                    Console.WriteLine($"#{lineCount++}:\t {shape}");
                     
                 }
 
